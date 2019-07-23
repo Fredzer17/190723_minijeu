@@ -50,7 +50,11 @@ Player3_choice= gets.chomp    # Ici, j'indique l'action à réaliser selon l'inp
   # end
   puts "Les autres joueurs t'attaquent!"   # Attaque de l'humain par les Bots, en utilisant l'array des ennemis.
   enemies.each do |enemie|
-    enemie.attacks(Player3)
+    if Player1.life_points>0 || Player2.life_points>0
+      enemie.attacks(Player3)
+    else
+      break
+    end
   end
   puts "----------------"
 end
